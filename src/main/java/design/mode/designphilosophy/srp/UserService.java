@@ -1,4 +1,4 @@
-package design.mode.designphilosophy.singleresponsibility;
+package design.mode.designphilosophy.srp;
 
 /**
  * @author ：apple
