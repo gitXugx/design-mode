@@ -18,6 +18,7 @@
 
 - 懒汉模式
 - 饿汉模式
+- 静态内部类
 - 枚举类实现
 
 可能单例模式时最简单的一个，但是它涉及的知识也是最多的。
@@ -115,6 +116,27 @@ public class HungrySingle {
 ``````
 
 这个就是我们上面解决方案的第二种，让初始化线程安全，具体在什么情况下类在加载的时候才会初始化，这边我需要查下jvn加载类时就初始化需要什么条件
+
+##### 1.3 静态内部类模式
+
+```java
+public class StaticInnerClassSingle {
+    // 1.私有构造方法
+    private StaticInnerClassSingle(){}
+    // 2.创建内部类
+    private static class SingleHandler{
+        private static final StaticInnerClassSingle INSTANCE = new StaticInnerClassSingle();
+    }
+    // 3.获取实例
+    public static  StaticInnerClassSingle getInstance(){
+        return SingleHandler.INSTANCE;
+    }
+}
+
+```
+静态内部类的初始化和正常的类初始化一样，在调用的时候才会初始化。所以该实现方式，既保证了对象初始化的安全，又可以做到用到的时候才初始化，保证资源不被浪费
+
+##### 1.4 枚举类实现模式
 
 
 
