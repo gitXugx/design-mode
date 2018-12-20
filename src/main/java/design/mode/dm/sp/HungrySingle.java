@@ -2,7 +2,7 @@ package design.mode.dm.sp;
 
 /**
  * @author ：ex-xugaoxiang001
- * @description ：
+ * @description ：饿汉模式
  * @copyright ：	Copyright 2018 yowits Corporation. All rights reserved.
  * @create ：2018/12/20 16:26
  */
