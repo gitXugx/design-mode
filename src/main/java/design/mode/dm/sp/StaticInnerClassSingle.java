@@ -1,5 +1,7 @@
 package design.mode.dm.sp;
 
+import com.sun.org.apache.bcel.internal.classfile.InnerClass;
+
 /**
  * @author ：ex-xugaoxiang001
  * @description ：静态内部类单例设计模式
@@ -10,11 +12,11 @@ public class StaticInnerClassSingle {
     // 1.私有构造方法
     private StaticInnerClassSingle(){}
     // 2.创建内部类
-    private static class InnerClass{
+    private static class SingleHandler{
         private static final StaticInnerClassSingle INSTANCE = new StaticInnerClassSingle();
     }
     // 3.获取实例
     public static  StaticInnerClassSingle getInstance(){
-        return InnerClass.INSTANCE;
+        return SingleHandler.INSTANCE;
     }
 }
