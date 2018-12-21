@@ -138,6 +138,66 @@ public class StaticInnerClassSingle {
 
 ##### 1.4 枚举类实现模式
 
+有人说枚举是单例模式的最佳实现，那我们可以看看到底为什么。
+
+``````java
+public enum  EnumSingle {
+
+    INSTANCE;
+
+    private EnumSingle(){
+        System.out.println("init");
+    }
+}
+
+``````
+
+仅仅几行代码就完成了单例，我们看看到底做了什么，那就要反编译下class文件
+
+``````java
+Compiled from "EnumSingle.java"
+public final class design.mode.dm.sp.EnumSingle extends java.lang.Enum<design.mode.dm.sp.EnumSingle> {
+  public static final design.mode.dm.sp.EnumSingle INSTANCE;
+
+  public static design.mode.dm.sp.EnumSingle[] values();
+    Code:
+       0: getstatic     #1                  // Field $VALUES:[Ldesign/mode/dm/sp/EnumSingle;
+       3: invokevirtual #2                  // Method "[Ldesign/mode/dm/sp/EnumSingle;".clone:()Ljava/lang/Object;
+       6: checkcast     #3                  // class "[Ldesign/mode/dm/sp/EnumSingle;"
+       9: areturn
+
+  public static design.mode.dm.sp.EnumSingle valueOf(java.lang.String);
+    Code:
+       0: ldc           #4                  // class design/mode/dm/sp/EnumSingle
+       2: aload_0
+       3: invokestatic  #5                  // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+       6: checkcast     #4                  // class design/mode/dm/sp/EnumSingle
+       9: areturn
+
+  static {};
+    Code:
+       0: new           #4                  // class design/mode/dm/sp/EnumSingle
+       3: dup
+       4: ldc           #10                 // String INSTANCE
+       6: iconst_0
+       7: invokespecial #11                 // Method "<init>":(Ljava/lang/String;I)V
+      10: putstatic     #12                 // Field INSTANCE:Ldesign/mode/dm/sp/EnumSingle;
+      13: iconst_1
+      14: anewarray     #4                  // class design/mode/dm/sp/EnumSingle
+      17: dup
+      18: iconst_0
+      19: getstatic     #12                 // Field INSTANCE:Ldesign/mode/dm/sp/EnumSingle;
+      22: aastore
+      23: putstatic     #1                  // Field $VALUES:[Ldesign/mode/dm/sp/EnumSingle;
+      26: return
+}
+
+``````
+
+从上面大致上可以看出他是使用静态代码块来初始化INSTANCE ， 默认是继承enum类，那么我们也可以看出创建的enum类是无法去继承其他类.
+枚举类构造方法默认是私有的。枚举类反序列化的时候是调用valueOf()方法。在使用反射创建的时候，java对枚举进行了保护所以无法创建
+
+单例可以说到此结束，后续还会做上枚举的补充和类加载的补充
 
 
 

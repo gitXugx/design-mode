@@ -1,7 +1,5 @@
 package design.mode.dm.sp;
 
-import com.sun.org.apache.bcel.internal.classfile.InnerClass;
-
 /**
  * @author ：ex-xugaoxiang001
  * @description ：静态内部类单例设计模式
