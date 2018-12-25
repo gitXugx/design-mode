@@ -2,7 +2,7 @@ package design.mode.dm.fp.sfp;
 
 /**
  * @author ：ex-xugaoxiang001
- * @description ：
+ * @description ：简单(静态)工厂
  * @copyright ：	Copyright 2018 yowits Corporation. All rights reserved.
  * @create ：2018/12/21 14:51
  */

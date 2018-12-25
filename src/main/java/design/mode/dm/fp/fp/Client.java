@@ -2,7 +2,7 @@ package design.mode.dm.fp.fp;
 
 /**
  * @author ：ex-xugaoxiang001
- * @description ：
+ * @description ：工厂模式
  * @copyright ：	Copyright 2018 yowits Corporation. All rights reserved.
  * @create ：2018/12/24 16:03
  */
