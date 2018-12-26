@@ -6,7 +6,7 @@ import design.mode.dm.bp.v1.SMSBuilder;
 
 /**
  * @author ：ex-xugaoxiang001
- * @description ：
+ * @description ：建造者模式
  * @copyright ：	Copyright 2018 yowits Corporation. All rights reserved.
  * @create ：2018/12/25 17:56
  */
