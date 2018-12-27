@@ -8,33 +8,33 @@ package design.mode.dm.bp.v2;
  */
 public class Menu {
 
-    private Drinks drinksList;
+    private Drink drink;
 
-    private Dishes dishesList;
+    private Dishe dishe;
 
-    private Food foodList;
+    private Food food;
 
     public static class ProductBuild{
 
-        private Drinks drinksList;
+        private Drink drink;
 
-        private Dishes dishesList;
+        private Dishe dishe;
 
-        private Food foodList;
+        private Food food;
 
-        public ProductBuild drinksList(Drinks drinksList) {
-            this.drinksList = drinksList;
+        public ProductBuild drink(Drink drink) {
+            this.drink = drink;
             return this;
         }
 
-        public ProductBuild dishesList(Dishes dishesList) {
-            this.dishesList = dishesList;
+        public ProductBuild dishe(Dishe dishe) {
+            this.dishe = dishe;
             return this;
 
         }
 
-        public ProductBuild foodList(Food foodList) {
-            this.foodList = foodList;
+        public ProductBuild food(Food food) {
+            this.food = food;
             return this;
         }
 
@@ -46,22 +46,22 @@ public class Menu {
 
         public Menu build(){
             Menu menu = new Menu();
-            menu.dishesList =  this.dishesList;
-            menu.drinksList = this.drinksList;
-            menu.foodList = this.foodList;
+            menu.dishe =  this.dishe;
+            menu.drink = this.drink;
+            menu.food = this.food;
             return menu;
         }
     }
 
     public void showMenu(){
-        if(foodList != null){
-            foodList.showFood();
+        if(food != null){
+            food.showFood();
         }
-        if(drinksList != null){
-            drinksList.showSmell();
+        if(drink != null){
+            drink.showSmell();
         }
-        if(dishesList != null){
-            dishesList.showDishes();
+        if(dishe != null){
+            dishe.showDishes();
         }
     }
 

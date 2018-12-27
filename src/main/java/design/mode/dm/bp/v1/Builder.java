@@ -16,9 +16,6 @@ public abstract class Builder {
     abstract void buildFilter();
 
     protected Markting createMarkting(){
-        buildLoadPerson();
-        buildSend();
-        buildFilter();
         return markting;
     }
 }

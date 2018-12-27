@@ -14,6 +14,9 @@ public class Director {
         this.builder = builder;
     }
     public Markting construct(){
+        builder.buildLoadPerson();
+        builder.buildSend();
+        builder.buildFilter();
         return builder.createMarkting();
     }
 }

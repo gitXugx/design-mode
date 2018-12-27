@@ -12,16 +12,16 @@ public class Client {
 
         System.out.println("中国套餐:");
         Menu ch = Menu.ProductBuild.builder()
-                .dishesList(new FriedChicken())
-                .foodList(new Rice())
-                .drinksList(new OrangeJuice()).build();
+                .dishe(new FriedChicken())
+                .food(new Rice())
+                .drink(new OrangeJuice()).build();
         ch.showMenu();
 
         System.out.println("英国套餐:");
         Menu eh = Menu.ProductBuild.builder()
-                .dishesList(new RoastedBeef())
-                .foodList(new Bread())
-                .drinksList(new OrangeJuice()).build();
+                .dishe(new RoastedBeef())
+                .food(new Bread())
+                .drink(new OrangeJuice()).build();
         eh.showMenu();
 
     }
