@@ -156,17 +156,17 @@ public enum  EnumSingle {
 
 ``````java
 Compiled from "EnumSingle.java"
-public final class design.mode.dm.sp.EnumSingle extends java.lang.Enum<design.mode.dm.sp.EnumSingle> {
-  public static final design.mode.dm.sp.EnumSingle INSTANCE;
+public final class design.mode.dm.creational.sp.EnumSingle extends java.lang.Enum<design.mode.dm.creational.sp.EnumSingle> {
+  public static final design.mode.dm.creational.sp.EnumSingle INSTANCE;
 
-  public static design.mode.dm.sp.EnumSingle[] values();
+  public static design.mode.dm.creational.sp.EnumSingle[] values();
     Code:
        0: getstatic     #1                  // Field $VALUES:[Ldesign/mode/dm/sp/EnumSingle;
        3: invokevirtual #2                  // Method "[Ldesign/mode/dm/sp/EnumSingle;".clone:()Ljava/lang/Object;
        6: checkcast     #3                  // class "[Ldesign/mode/dm/sp/EnumSingle;"
        9: areturn
 
-  public static design.mode.dm.sp.EnumSingle valueOf(java.lang.String);
+  public static design.mode.dm.creational.sp.EnumSingle valueOf(java.lang.String);
     Code:
        0: ldc           #4                  // class design/mode/dm/sp/EnumSingle
        2: aload_0
