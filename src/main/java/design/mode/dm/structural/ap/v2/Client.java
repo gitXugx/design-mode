@@ -9,11 +9,10 @@ package design.mode.dm.structural.ap.v2;
 public class Client {
     public  static void main(String[] args){
         HeadsetAdapter headsetAdapter = new HeadsetAdapter(new Circular(), new TypecHeadset());
-
+        System.out.println("圆形耳机 插入");
         headsetAdapter.circularPlugInEarphones();
-
+        System.out.println("type-c耳机 插入");
         headsetAdapter.typecPlugInEarphones();
 
     }
-
 }

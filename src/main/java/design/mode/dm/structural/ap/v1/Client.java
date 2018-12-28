@@ -10,6 +10,7 @@ public class Client {
 
     public  static void main(String[] args){
         IHeadsetPlug circularPlug = new TypeHeadsetAdapter();
+        System.out.println("使用圆形耳机");
         circularPlug.circularPlugInEarphones();
     }
 
