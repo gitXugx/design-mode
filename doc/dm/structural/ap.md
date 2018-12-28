@@ -38,8 +38,6 @@
 2. 创建客户需要的接口
 3. 创建适配器并实现客户需要的接口,继承原接口
 
-****
-
 type-c 接口:
 ```java
 public class TypecHeadset {
@@ -62,7 +60,7 @@ public interface IHeadsetPlug {
 ```
 
 
-把<font color=#FF8C00 >type-c</font>适配成圆形:
+把`type-c`适配成圆形:
 
 ```java
 public class TypeHeadsetAdapter extends TypecHeadset implements IHeadsetPlug{
@@ -93,7 +91,7 @@ public class Client {
 
 **使用结果**
 + 增加了类的透明度,对于客户端来说是无感知的
-+ 增加了类的复用,其<font color=#FF8C00 >type-c</font>依然可以使用原来的接口
++ 增加了类的复用,其`type-c`依然可以使用原来的接口
 
 ### v2.对象适配
 > 我们现在要做一个双向适配的适配器,这个适配器可以作用圆孔和<font color=#FF8C00 >type-c</font>
