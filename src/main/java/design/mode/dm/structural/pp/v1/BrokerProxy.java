@@ -16,14 +16,14 @@ public class BrokerProxy implements IStar{
 
     @Override
     public void openingAConcert() {
-        befor();
+        before();
         star.openingAConcert();
         after();
     }
 
 
-    private void befor(){
-        System.out.println("价钱是否谈好");
+    private void before(){
+        System.out.println("价钱谈好");
     }
 
     private void after(){

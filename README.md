@@ -17,6 +17,10 @@
 3. [建造者模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/bp.md)
 4. [原型模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/pp.md)
 
+**结构型:**
+1. [适配器模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/ap.md)
+2. [外观模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/fp.md)
+
 
 
 
