@@ -44,10 +44,11 @@ public class IdlerSingle {
 
 ``````
 
-上面懒汉并不是线程安全的，简单粗暴的就是加上synchronized的
+上面懒汉并不是线程安全的，简单粗暴的就是加上`synchronized`的
 
-`````java
+`````text
 public static synchronized IdlerSingle getInstance(){
+}
 `````
 
 但是上面因为锁的粒度太大，不论当**idlerSingle**初始化成功没，每个线程来访问都要进行获取锁,当并发很多时可能会降低性能，提高性能就是降低锁粒度.
@@ -154,7 +155,7 @@ public enum  EnumSingle {
 
 仅仅几行代码就完成了单例，我们看看到底做了什么，那就要反编译下class文件
 
-``````java
+```text
 Compiled from "EnumSingle.java"
 public final class design.mode.dm.creational.sp.EnumSingle extends java.lang.Enum<design.mode.dm.creational.sp.EnumSingle> {
   public static final design.mode.dm.creational.sp.EnumSingle INSTANCE;
@@ -192,7 +193,7 @@ public final class design.mode.dm.creational.sp.EnumSingle extends java.lang.Enu
       26: return
 }
 
-``````
+```
 
 从上面大致上可以看出他是使用静态代码块来初始化INSTANCE ， 默认是继承enum类，那么我们也可以看出创建的enum类是无法去继承其他类.
 枚举类构造方法默认是私有的。枚举类反序列化的时候是调用valueOf()方法。在使用反射创建的时候，java对枚举进行了保护所以无法创建
