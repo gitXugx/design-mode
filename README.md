@@ -20,6 +20,7 @@
 **结构型:**
 1. [适配器模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/ap.md)
 2. [外观模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/fp.md)
+2. [代理模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/pp.md)
 
 
 
