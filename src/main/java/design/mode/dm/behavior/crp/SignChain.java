@@ -1,4 +1,4 @@
-package design.mode.dm.behavior;
+package design.mode.dm.behavior.crp;
 
 import java.util.ArrayList;
 import java.util.List;

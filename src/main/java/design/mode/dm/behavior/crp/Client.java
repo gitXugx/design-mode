@@ -1,4 +1,4 @@
-package design.mode.dm.behavior;
+package design.mode.dm.behavior.crp;
 
 /**
  * @author ：ex-xugaoxiang001
