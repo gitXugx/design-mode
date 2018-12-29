@@ -10,6 +10,6 @@ public class Boss implements Sign {
 
     @Override
     public void apply(String name, String comment) {
-        System.out.println("经理同意了"+ name + "的申请: "+ comment);
+        System.out.println("boss同意了"+ name + "的申请: "+ comment);
     }
 }
