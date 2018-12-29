@@ -25,8 +25,4 @@ public class SignChain {
             sign.apply(name , comment);
         }
     }
-
-
-
-
 }
