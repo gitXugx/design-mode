@@ -77,7 +77,7 @@ public interface Observer {
     void update (String message);
 }
 ```
-创建观察者实现
+创建观察者实现:
 
 ```java
 public class XgxObserver implements Observer{
