@@ -25,8 +25,4 @@ public class FlyweightFactory {
         }
         return phone;
     }
-
-
-
-
 }
