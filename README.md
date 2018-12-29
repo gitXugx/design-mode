@@ -25,7 +25,7 @@
 5. [享元模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/flyweightp.md)
 
 **行为型**
-1. 
+1. [责任链模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/crp.md)
 
 
 
