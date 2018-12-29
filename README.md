@@ -26,6 +26,9 @@
 
 **行为型**
 1. [责任链模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/crp.md)
+1. [模板方法模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/tp.md)
+1. [观察者模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/op.md)
+
 
 
 
