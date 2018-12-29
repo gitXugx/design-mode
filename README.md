@@ -21,12 +21,20 @@
 1. [适配器模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/ap.md)
 2. [外观模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/fp.md)
 3. [代理模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/pp.md)
-2. [装饰者模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/wp.md)
-3. [享元模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/flyweightp.md)
+4. [装饰者模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/wp.md)
+5. [享元模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/structural/flyweightp.md)
+
+**行为型**
+1. 
 
 
 
 
+
+**未完成**
+
+1. [组合模式]
+2. [桥接模式]
 
 
 
