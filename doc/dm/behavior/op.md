@@ -129,6 +129,81 @@ QY收到更新:今天是一个好日子,下雪了
 ```
 
 
+### v2. jdk观察者模式
+> 还是上面的例子
+
+1. 创建公众号实现`java.util.Observable`
+2. 创建每个观察者实现`java.util.Observer`
+
+创建公众号:
+```java
+public class Vipcn extends Observable {
+    public void notic(String name){
+        setChanged();
+        notifyObservers(name);
+    }
+}
+```
+可以看到Observable里面好多都是线程安全的
+
+创建每个观察者实现:
+```java
+public class XgxObserver implements Observer {
+    private String name;
+
+    public XgxObserver(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println(name+"收到更新： "+ arg);
+    }
+}
+
+public class QYObserver implements Observer {
+
+    private String name;
+
+    public QYObserver(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println(name+"收到更新："+ arg);
+    }
+}
+```
+客户端:
+```java
+public class Client {
+    public  static void main(String[] args){
+        Observable vipcn = new Vipcn();
+        Observer qy = new QYObserver("QY");
+        Observer xgx = new XgxObserver("xgx");
+        vipcn.addObserver(qy);
+        vipcn.addObserver(xgx);
+        ((Vipcn) vipcn).notic("发布博文");
+        vipcn.notifyObservers();
+    }
+}
+```
+执行结果:
+```text
+xgx收到更新： 发布博文
+QY收到更新：发布博文
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
