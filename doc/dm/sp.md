@@ -245,6 +245,31 @@ public class IdlerSingle implements Serializable {
 ### 2.2 反射攻击
 > 反射创建对象是需要调用构造函数的
 
+反射测试类:
+
+```java
+public class ReflectTest {
+    public  static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        //获取单例对象
+        IdlerSingle instance = IdlerSingle.getInstance();
+        Class<IdlerSingle> idlerSingleClass = IdlerSingle.class;
+        Constructor<IdlerSingle> declaredConstructor = idlerSingleClass.getDeclaredConstructor();
+        declaredConstructor.setAccessible(true);
+        //通过反射创建对象
+        IdlerSingle idlerSingle = declaredConstructor.newInstance();
+        System.out.println(instance == idlerSingle);
+    }
+}
+```
+执行结果:
+```text
+false
+```
+一般方式在构造函数中做一个计数器，如果是第二次初始化就直接抛异常,但是这种方式除非你确保getInstance执行优与反射
+
+反射对枚举类是有保护的，如果对反射类进行反射就会抛出异常
+
+具体可以阅读[反射源码分析]()
 
 ## 3. 源码使用场景
 
