@@ -273,6 +273,37 @@ false
 
 ## 3. 源码使用场景
 
+### 3.1 java.lang.Runtime
+
+```java
+public class Runtime {
+    private static Runtime currentRuntime = new Runtime();
+    public static Runtime getRuntime() {
+        return currentRuntime;
+    }
+
+    /** Don't let anyone else instantiate this class */
+    private Runtime() {}
+}
+```
+可以看到这是个饿汉单例模式,***Runtime***主要获取一些运行时JVM信息和执行命令的方法，每个JVM只需要有一个信息类。
+```java
+public class Test {
+    public  static void main(String[] args){
+        Runtime runtime = Runtime.getRuntime();
+        long l = runtime.freeMemory();
+        System.out.println("freeMemory： "+  l);
+        //gc
+        runtime.gc();
+        //
+        long l1 = runtime.totalMemory();
+        System.out.println("totalMemory: "+ l1);
+    }
+}
+```
+可以在运行时获取JVM信息，当然还有很多功能
+
+
 
 
 
