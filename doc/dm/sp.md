@@ -201,7 +201,49 @@ public final class design.mode.dm.creational.sp.EnumSingle extends java.lang.Enu
 单例可以说到此结束，后续还会做上枚举的补充和类加载的补充，clone方法的讲解
 
 
-## 2. 反射攻击的防御
+## 2. 序列化、反射攻击的防御
+> 使用这些方法除了枚举单例不会有多个实例其他都会产生多个实例
+
+### 2.1 序列化问题
+
+反序列化测试代码:
+```java
+public class SerializationTest {
+    public  static void main(String[] args) throws IOException, ClassNotFoundException {
+        //懒汉模式
+        IdlerSingle instance = IdlerSingle.getInstance();
+        ObjectOutputStream serialization = new ObjectOutputStream(new FileOutputStream("serialization"));
+        serialization.writeObject(instance);
+        serialization.close();
+        //反序列化
+        ObjectInputStream serialization1 = new ObjectInputStream(new FileInputStream(new File("serialization")));
+        IdlerSingle o = (IdlerSingle)serialization1.readObject();
+        System.out.println(instance == o);
+    }
+}
+```
+执行结果:
+```text
+false
+```
+在IdlerSingle类中添加`private Object readResolve`方法
+```java
+public class IdlerSingle implements Serializable {
+   //解决反序列化多个对象问题
+    private Object readResolve(){
+        if(idlerSingle == null){
+            return getInstance();
+        }else {
+            return idlerSingle;
+        }
+    }
+}
+```
+
+枚举类不会受到反序列化的影响和为什么要写`readResolve`方法,具体原因可以阅读[序列化源码分析]()
+
+### 2.2 反射攻击
+> 反射创建对象是需要调用构造函数的
 
 
 ## 3. 源码使用场景
