@@ -29,6 +29,7 @@
 1. [模板方法模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/tp.md)
 1. [观察者模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/op.md)
 1. [命令模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/cp.md)
+1. [迭代器模式](https://github.com/gitXugx/design-mode/blob/master/doc/dm/behavior/ip.md)
 
 
 
